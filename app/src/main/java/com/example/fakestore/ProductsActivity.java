@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.fakestore.databinding.ActivityProductsBinding;
 import com.example.fakestore.network.FakeApi;
 import com.example.fakestore.network.FakeApiService;
+import com.example.fakestore.network.OnProductActionListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProductsActivity extends AppCompatActivity {
+public class ProductsActivity extends AppCompatActivity implements OnProductActionListener{
     private ActivityProductsBinding binding;
     private ProductRvAdapter adapter;
     private List<ProductItems> productItems = new ArrayList<>();
@@ -65,6 +66,13 @@ public class ProductsActivity extends AppCompatActivity {
 
     private void setAdapter() {
         adapter = new ProductRvAdapter(productItems);
-        adapter.updateData(productItems);
+        adapter.setOnProductActionListener(this);
+    }
+
+    @Override
+    public void OnItemClick(int productId) {
+        Intent intent = new Intent(getApplicationContext(),ProductDetailsActivity.class);
+        intent.putExtra("productId",productId);
+        startActivity(intent);
     }
 }
