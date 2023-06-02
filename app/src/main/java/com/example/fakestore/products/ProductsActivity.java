@@ -1,18 +1,22 @@
-package com.example.fakestore;
+package com.example.fakestore.products;
 import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.example.fakestore.BaseActivity;
+import com.example.fakestore.productdetails.ProductDetailsActivity;
 import com.example.fakestore.databinding.ActivityProductsBinding;
 import com.example.fakestore.models.Product;
+
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ProductsActivity extends BaseActivity implements OnProductActionListener{
+public class ProductsActivity extends BaseActivity implements OnProductActionListener {
     private ActivityProductsBinding binding;
     private ProductRvAdapter adapter;
     private List<Product> productItems = new ArrayList<>();
@@ -59,7 +63,7 @@ public class ProductsActivity extends BaseActivity implements OnProductActionLis
 
     @Override
     public void OnItemClick(int productId) {
-        Intent intent = new Intent(getApplicationContext(),ProductDetailsActivity.class);
+        Intent intent = new Intent(getApplicationContext(), ProductDetailsActivity.class);
         intent.putExtra("productId",productId);
         startActivity(intent);
     }

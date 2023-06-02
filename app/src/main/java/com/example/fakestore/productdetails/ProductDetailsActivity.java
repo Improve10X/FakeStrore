@@ -1,8 +1,10 @@
-package com.example.fakestore;
+package com.example.fakestore.productdetails;
 import androidx.appcompat.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.example.fakestore.BaseActivity;
 import com.example.fakestore.databinding.ActivityProductDetailsBinding;
 import com.example.fakestore.models.Product;
 import com.squareup.picasso.Picasso;

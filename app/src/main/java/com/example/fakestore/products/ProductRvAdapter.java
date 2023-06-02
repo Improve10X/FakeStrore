@@ -1,4 +1,4 @@
-package com.example.fakestore;
+package com.example.fakestore.products;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;

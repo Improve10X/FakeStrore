@@ -1,4 +1,4 @@
-package com.example.fakestore;
+package com.example.fakestore.categoty;
 
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.fakestore.databinding.CategoryItemBinding;

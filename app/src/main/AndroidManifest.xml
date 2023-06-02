@@ -14,7 +14,7 @@
         android:theme="@style/Theme.FakeStore"
         tools:targetApi="31">
         <activity
-            android:name=".ProductDetailsActivity"
+            android:name=".productdetails.ProductDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
@@ -26,10 +26,10 @@
         </intent-filter>
         </activity>
         <activity
-            android:name=".ProductsActivity"
+            android:name=".products.ProductsActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoriesActivity"
+            android:name=".categoty.CategoriesActivity"
             android:exported="true">
 
         </activity>

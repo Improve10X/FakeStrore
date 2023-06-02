@@ -1,13 +1,13 @@
-package com.example.fakestore;
+package com.example.fakestore.categoty;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
-import com.example.fakestore.databinding.ActivityCategoriesBinding;
-import com.example.fakestore.network.FakeApi;
-import com.example.fakestore.network.FakeApiService;
+
+import com.example.fakestore.BaseActivity;
+import com.example.fakestore.products.ProductsActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import retrofit2.Call;

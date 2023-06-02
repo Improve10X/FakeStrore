@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.fakestore.databinding.ActivitySplashBinding;
+import com.example.fakestore.categoty.CategoriesActivity;
 
 public class SplashActivity extends AppCompatActivity {
     @Override
