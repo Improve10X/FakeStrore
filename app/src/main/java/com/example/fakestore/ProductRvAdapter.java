@@ -7,24 +7,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fakestore.databinding.ProductItemsBinding;
-import com.example.fakestore.network.OnProductActionListener;
+import com.example.fakestore.models.Product;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class ProductRvAdapter extends RecyclerView.Adapter<ProductRvViewHolder> {
-    private List<ProductItems> productItems;
+    private List<Product> productItems;
     private OnProductActionListener listener;
 
     void setOnProductActionListener(OnProductActionListener listener) {
         this.listener = listener;
     }
 
-    public ProductRvAdapter(List<ProductItems> productItems) {
+    public ProductRvAdapter(List<Product> productItems) {
         this.productItems = productItems;
     }
 
-    void updateData(List<ProductItems> productItems) {
+    void updateData(List<Product> productItems) {
         this.productItems = productItems;
         notifyDataSetChanged();
     }
@@ -40,14 +40,14 @@ public class ProductRvAdapter extends RecyclerView.Adapter<ProductRvViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ProductRvViewHolder holder, int position) {
-        ProductItems productItems1 = productItems.get(position);
-        holder.binding.titleTxt.setText(productItems1.getTitle());
-        holder.binding.priceTxt.setText(String.valueOf(productItems1.getPrice()));
-        holder.binding.ratingRb.setRating(productItems1.getRating().getRate());
-        holder.binding.countTxt.setText(String.valueOf(productItems1.getRating().getCount()));
-        Picasso.get().load(productItems1.getImageUrl()).into(holder.binding.posterIv);
+        Product product = productItems.get(position);
+        holder.binding.titleTxt.setText(product.getTitle());
+        holder.binding.priceTxt.setText(String.valueOf(product.getPrice()));
+        holder.binding.ratingRb.setRating(product.getRating().getRate());
+        holder.binding.countTxt.setText(String.valueOf(product.getRating().getCount()));
+        Picasso.get().load(product.getImageUrl()).into(holder.binding.posterIv);
         holder.binding.getRoot().setOnClickListener(v -> {
-            listener.OnItemClick(productItems1.getId());
+            listener.OnItemClick(product.getId());
         });
     }
 

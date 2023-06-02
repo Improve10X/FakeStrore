@@ -4,13 +4,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import com.example.fakestore.models.Categories;
+import com.example.fakestore.models.Product;
 import com.example.fakestore.network.FakeApi;
 import com.example.fakestore.network.FakeApiService;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.List;
 
 import retrofit2.Call;
@@ -39,8 +38,8 @@ public class ExampleUnitTest {
     @Test
     public void getProducts() throws IOException {
         FakeApiService service = new FakeApi().fakeApiService();
-        Call<List<ProductItems>> call = service.getProduct("jewelery");
-        List<ProductItems> abc = call.execute().body();
+        Call<List<Product>> call = service.getProducts("jewelery");
+        List<Product> abc = call.execute().body();
         assertNotNull(abc);
         assertFalse(abc.isEmpty());
         System.out.println(new Gson().toJson(abc));
@@ -48,10 +47,10 @@ public class ExampleUnitTest {
     @Test
     public void fetchProductDetails() throws IOException {
         FakeApiService service = new FakeApi().fakeApiService();
-        Call<ProductItems> call = service.getProductDetails(2);
-        ProductItems productItems = call.execute().body();
-        assertNotNull(productItems);
-        System.out.println(new Gson().toJson(productItems));
+        Call<Product> call = service.getProductDetails(2);
+        Product product = call.execute().body();
+        assertNotNull(product);
+        System.out.println(new Gson().toJson(product));
 
     }
 }

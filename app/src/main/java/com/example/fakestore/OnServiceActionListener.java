@@ -1,4 +1,4 @@
-package com.example.fakestore.network;
+package com.example.fakestore;
 
 public interface OnServiceActionListener {
     void onItemClicked(String category);

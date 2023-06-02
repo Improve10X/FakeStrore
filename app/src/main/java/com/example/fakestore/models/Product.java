@@ -1,10 +1,16 @@
-package com.example.fakestore;
+package com.example.fakestore.models;
 
-import com.example.fakestore.models.Rating;
 import com.google.gson.annotations.SerializedName;
 
-public class ProductItems {
+public class Product {
+    @SerializedName("image")
+    private String imageUrl;
+    private float price;
     private String title;
+    private Rating rating;
+    private String description;
+    private String category;
+    private Integer id;
 
     public String getDescription() {
         return description;
@@ -21,9 +27,6 @@ public class ProductItems {
     public void setCategory(String category) {
         this.category = category;
     }
-
-    private String description;
-    private String category;
 
     public String getTitle() {
         return title;
@@ -57,11 +60,6 @@ public class ProductItems {
         this.price = price;
     }
 
-    private Integer id;
-    @SerializedName("image")
-    private String imageUrl;
-    private float price;
-
     public Rating getRating() {
         return rating;
     }
@@ -69,6 +67,4 @@ public class ProductItems {
     public void setRating(Rating rating) {
         this.rating = rating;
     }
-
-    private Rating rating;
 }
