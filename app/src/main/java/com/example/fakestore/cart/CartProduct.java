@@ -1,4 +1,4 @@
-package com.example.fakestore;
+package com.example.fakestore.cart;
 
 public class CartProduct {
 

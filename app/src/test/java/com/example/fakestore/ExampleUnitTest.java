@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.example.fakestore.cart.Cart;
 import com.example.fakestore.models.Product;
 import com.example.fakestore.network.FakeApi;
 import com.example.fakestore.network.FakeApiService;

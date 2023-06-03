@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.fakestore.cart.CartActivity;
 import com.example.fakestore.network.FakeApi;
 import com.example.fakestore.network.FakeApiService;
 
