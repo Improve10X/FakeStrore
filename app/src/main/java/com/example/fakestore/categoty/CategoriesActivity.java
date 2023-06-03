@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.fakestore.BaseActivity;
+import com.example.fakestore.databinding.ActivityCategoriesBinding;
 import com.example.fakestore.products.ProductsActivity;
 
 import java.util.ArrayList;
