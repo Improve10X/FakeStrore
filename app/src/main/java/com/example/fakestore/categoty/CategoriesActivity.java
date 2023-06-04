@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.example.fakestore.BaseActivity;
 import com.example.fakestore.databinding.ActivityCategoriesBinding;
-import com.example.fakestore.products.ProductsActivity;
+import com.example.fakestore.models.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +15,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CategoriesActivity extends BaseActivity implements OnServiceActionListener {
+public class CategoriesActivity extends BaseActivity {
     private ActivityCategoriesBinding binding;
     private CategoryRvAdapter adapter;
 
-    private List<String> categories = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +32,18 @@ public class CategoriesActivity extends BaseActivity implements OnServiceActionL
     }
 
     private void getApi() {
-        Call<List<String>> call = service.FetchCategories();
-        call.enqueue(new Callback<List<String>>() {
-            @Override
-            public void onResponse(Call<List<String>> call, Response<List<String>> response) {
-                adapter.setCategories(response.body());
-            }
+        Call<List<Product>> call = service.FetchCategories();
+       call.enqueue(new Callback<List<Product>>() {
+           @Override
+           public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
+            adapter.setProducts(response.body());
+           }
 
-            @Override
-            public void onFailure(Call<List<String>> call, Throwable t) {
-                Toast.makeText(CategoriesActivity.this, "Failure", Toast.LENGTH_SHORT).show();
-            }
-        });
+           @Override
+           public void onFailure(Call<List<Product>> call, Throwable t) {
+
+           }
+       });
     }
 
     private void connectAdapter() {
@@ -52,14 +52,13 @@ public class CategoriesActivity extends BaseActivity implements OnServiceActionL
     }
 
     private void setupAdapter() {
-        adapter = new CategoryRvAdapter(categories);
-        adapter.setOnServiceActionListener(this);
+        adapter = new CategoryRvAdapter(products);
     }
 
-    @Override
-    public void onItemClicked(String categoryName) {
-        Intent intent = new Intent(this, ProductsActivity.class);
-        intent.putExtra("categoryName", categoryName);
-        startActivity(intent);
-    }
+//    @Override
+//    public void onItemClicked(String categoryName) {
+//        Intent intent = new Intent(this, ProductsActivity.class);
+//        intent.putExtra("categoryName", categoryName);
+//        startActivity(intent);
+//    }
 }

@@ -7,23 +7,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fakestore.databinding.CategoryItemBinding;
+import com.example.fakestore.models.Product;
 
 import java.util.List;
 
 public class CategoryRvAdapter extends RecyclerView.Adapter<CategoryRvViewHolder> {
-    private List<String> categories;
+    private List<Product> products;
     private OnServiceActionListener listener;
 
     void setOnServiceActionListener(OnServiceActionListener listener) {
         this.listener = listener;
     }
 
-    public CategoryRvAdapter(List<String> categories) {
-        this.categories = categories;
+    public CategoryRvAdapter(List<Product> products) {
+        this.products = products;
     }
 
-    void setCategories(List<String> categories) {
-        this.categories = categories;
+    void setProducts(List<Product> products) {
+        this.products = products;
         notifyDataSetChanged();
     }
 
@@ -38,15 +39,15 @@ public class CategoryRvAdapter extends RecyclerView.Adapter<CategoryRvViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CategoryRvViewHolder holder, int position) {
-        String category = categories.get(position);
-        holder.binding.categoryItemTxt.setText(category);
-        holder.binding.categoryItemTxt.setOnClickListener(v -> {
-            listener.onItemClicked(category);
-        });
+        Product product = products.get(position);
+        holder.binding.nameTxt.setText(product.getName());
+//        holder.binding.categoryIdTxt.setText(product.getId() + "");
+//        holder.binding.nameTxt.setOnClickListener(v -> {
+//            listener.onItemClicked(Product);
+//        });
     }
-
     @Override
     public int getItemCount() {
-        return categories.size();
+        return products.size();
     }
 }

@@ -13,14 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FakeStore"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".CartActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".productdetails.ProductDetailsActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".SplashActivity"-->
+<!--            android:exported="true">-->
+<!--                 </activity>-->
+<!--        <activity-->
+<!--            android:name=".products.ProductsActivity"-->
+<!--            android:exported="false" />-->
         <activity
-            android:name=".CartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".productdetails.ProductDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".categoty.CategoriesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,12 +35,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".products.ProductsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".categoty.CategoriesActivity"
-            android:exported="true"></activity>
-    </application>
-
+            </application>
 </manifest>

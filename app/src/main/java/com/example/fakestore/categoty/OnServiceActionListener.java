@@ -1,5 +1,7 @@
 package com.example.fakestore.categoty;
 
+import com.example.fakestore.models.Product;
+
 public interface OnServiceActionListener {
-    void onItemClicked(String category);
+    void onItemClicked(Product product);
 }

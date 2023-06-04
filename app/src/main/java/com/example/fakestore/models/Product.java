@@ -1,32 +1,19 @@
 package com.example.fakestore.models;
 
-import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class Product {
-    @SerializedName("image")
-    private String imageUrl;
-    private float price;
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
+
+    private List<String> images;
     private String title;
-    private Rating rating;
-    private String description;
-    private String category;
-    private Integer id;
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 
     public String getTitle() {
         return title;
@@ -36,6 +23,18 @@ public class Product {
         this.title = title;
     }
 
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    private Integer price;
+
+    private Integer id;
+
     public Integer getId() {
         return id;
     }
@@ -44,27 +43,15 @@ public class Product {
         this.id = id;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getName() {
+        return name;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public float getPrice() {
-        return price;
-    }
+    private String name;
 
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public Rating getRating() {
-        return rating;
-    }
-
-    public void setRating(Rating rating) {
-        this.rating = rating;
-    }
 }
+
