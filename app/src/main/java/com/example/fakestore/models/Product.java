@@ -1,9 +1,36 @@
 package com.example.fakestore.models;
 
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Product {
+public class Product implements Serializable {
+    private String name;
+    private Float price;
+    private String title;
+    private Integer id;
+    private String description;
+    private List<String> images;
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public void setPrice(Float price) {
+        this.price = price;
+    }
+
+
     public List<String> getImages() {
         return images;
     }
@@ -12,8 +39,8 @@ public class Product {
         this.images = images;
     }
 
-    private List<String> images;
-    private String title;
+
+
 
     public String getTitle() {
         return title;
@@ -23,17 +50,6 @@ public class Product {
         this.title = title;
     }
 
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    private Integer price;
-
-    private Integer id;
 
     public Integer getId() {
         return id;
@@ -43,6 +59,10 @@ public class Product {
         this.id = id;
     }
 
+
+
+
+
     public String getName() {
         return name;
     }
@@ -51,7 +71,7 @@ public class Product {
         this.name = name;
     }
 
-    private String name;
+
 
 }
 

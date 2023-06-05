@@ -17,9 +17,9 @@ public interface FakeApiService {
     @GET ("api/v1/products/")
     Call<List<Product>> getProducts(@Query("categoryId") int categoryId);
 
-//    @GET("products/{productId}")
-//    Call<Product> getProductDetails(@Path("productId") int productId);
-//
+    @GET("api/v1/products/{productId}")
+    Call<Product> fetchProductDetails(@Path("productId") int productId);
+
 //    @GET ("carts/{productId}")
 //    Call<Cart> getCartItems(@Path("productId") int productId);
 }

@@ -28,6 +28,7 @@
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_title_txt" />
 
@@ -36,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="rating"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/product_rating_rb"
         app:layout_constraintStart_toEndOf="@+id/product_rating_rb"
         app:layout_constraintTop_toTopOf="@+id/product_rating_rb" />
@@ -45,6 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="count"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/rating_count_txt"
         app:layout_constraintStart_toEndOf="@+id/rating_count_txt"
         app:layout_constraintTop_toTopOf="@+id/rating_count_txt" />

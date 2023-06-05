@@ -41,10 +41,9 @@ public class CategoryRvAdapter extends RecyclerView.Adapter<CategoryRvViewHolder
     public void onBindViewHolder(@NonNull CategoryRvViewHolder holder, int position) {
         Product product = products.get(position);
         holder.binding.nameTxt.setText(product.getName());
-//        holder.binding.categoryIdTxt.setText(product.getId() + "");
-//        holder.binding.nameTxt.setOnClickListener(v -> {
-//            listener.onItemClicked(Product);
-//        });
+        holder.binding.nameTxt.setOnClickListener(v -> {
+            listener.onItemClicked(product);
+        });
     }
     @Override
     public int getItemCount() {

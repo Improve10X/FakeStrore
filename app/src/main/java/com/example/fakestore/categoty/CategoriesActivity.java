@@ -8,14 +8,17 @@ import android.widget.Toast;
 import com.example.fakestore.BaseActivity;
 import com.example.fakestore.databinding.ActivityCategoriesBinding;
 import com.example.fakestore.models.Product;
+import com.example.fakestore.products.ProductsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CategoriesActivity extends BaseActivity {
+public class CategoriesActivity extends BaseActivity implements OnServiceActionListener{
     private ActivityCategoriesBinding binding;
     private CategoryRvAdapter adapter;
 
@@ -52,13 +55,16 @@ public class CategoriesActivity extends BaseActivity {
     }
 
     private void setupAdapter() {
+
         adapter = new CategoryRvAdapter(products);
+        adapter.setOnServiceActionListener(this);
+
     }
 
-//    @Override
-//    public void onItemClicked(String categoryName) {
-//        Intent intent = new Intent(this, ProductsActivity.class);
-//        intent.putExtra("categoryName", categoryName);
-//        startActivity(intent);
-//    }
+    @Override
+    public void onItemClicked(Product product) {
+        Intent intent = new Intent(getApplicationContext(), ProductsActivity.class);
+        intent.putExtra("product",product);
+        startActivity(intent);
+    }
 }
